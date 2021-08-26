@@ -29,6 +29,7 @@ nav > h1 {
 .main {
   padding: 1rem;
   max-width: 600px;
+  margin: auto;
 }
 .main > h4 {
   margin: 0.5rem;
