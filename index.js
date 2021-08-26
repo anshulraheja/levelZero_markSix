@@ -1,29 +1,14 @@
 import "./styles.css";
 
 var serverURL = "https://api.funtranslations.com/translate/minion.json";
-
 var txtInput = document.querySelector("#txt-input");
-//console.log(txtInput)
-
 var btnTranslate = document.querySelector("#btn-translate");
-//console.log(btnTranslate)
-btnTranslate.addEventListener("click", clickHandler);
-
 var divOutput = document.querySelector("#div-output");
-//console.log(divOutput)
 
-function getTranslationURL(text) {
-  return serverURL + "?text=" + text;
-}
-
-function errorHandler(error) {
-  console.log("error occured", error);
-  alert("Something went wong with server! try again aftersometime.");
-}
+btnTranslate.addEventListener("click", clickHandler);
 
 function clickHandler() {
   var inputText = txtInput.value;
-
   fetch(getTranslationURL(inputText))
     .then((response) => response.json())
     .then((json) => {
@@ -31,4 +16,12 @@ function clickHandler() {
       divOutput.innerText = translatedText;
     })
     .catch(errorHandler);
+}
+
+function getTranslationURL(text) {
+  return serverURL + "?text=" + text;
+}
+
+function errorHandler(error) {
+  alert("Something went wong with server! Try after sometime.");
 }
