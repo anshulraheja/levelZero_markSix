@@ -64,6 +64,7 @@ button {
   border: 2px solid var(--clr-primary-4);
   border-radius: 0.5rem;
   padding: 0.5rem;
+  overflow: hidden;
 }
 
 /* footer */
